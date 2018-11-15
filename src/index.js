@@ -6,6 +6,12 @@ import store from "./components/store/store";
 
 import "semantic-ui-css/semantic.min.css";
 import App from "./components/App";
+import { userLoggedIn } from "./components/store/actions/auth";
+
+if (localStorage.bookwormJWT) {
+  const user = { token: localStorage.bookwormJWT };
+  store.dispatch(userLoggedIn(user));
+}
 
 ReactDOM.render(
   <BrowserRouter>
