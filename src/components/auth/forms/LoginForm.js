@@ -45,7 +45,7 @@ class LoginForm extends Component {
   validate = data => {
     const errors = {};
     if (!data.password) errors.password = "password can't be blank";
-    else if (data.password.length < 6 || data.password.length > 12)
+    else if (data.password.length < 5 || data.password.length > 30)
       errors.password = " password length should at least 6-12 long";
 
     if (Validator.isEmpty(data.email))
@@ -71,7 +71,7 @@ class LoginForm extends Component {
         <Form onSubmit={this.onSubmit} loading={loading}>
           {errors.global && (
             <Message negative>
-              <Message.Header>Something went wrong</Message.Header>
+              <Message.Header>Something went wrong...</Message.Header>
               <p>{errors.global}</p>
             </Message>
           )}
