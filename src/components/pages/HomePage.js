@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { Button } from "semantic-ui-react";
+import { Button, Icon } from "semantic-ui-react";
 import * as actions from "../store/actions/auth";
 
 const HomePage = ({ isAuthenticated, logout }) => {
@@ -14,9 +14,31 @@ const HomePage = ({ isAuthenticated, logout }) => {
           Logout
         </Button>
       ) : (
-        <Button primary as={Link} name="login" to="/login">
-          Login
-        </Button>
+        <Button.Group>
+          <Button animated>
+            <Button.Content visible primary as={Link} name="login" to="/login">
+              Login
+            </Button.Content>
+            <Button.Content hidden primary as={Link} name="login" to="/login">
+              <Icon name="sign-in" />
+            </Button.Content>
+          </Button>
+          <Button animated>
+            <Button.Content
+              visible
+              primary
+              as={Link}
+              name="signup"
+              to="/signup"
+            >
+              Signup
+            </Button.Content>
+            <Button.Content hidden primary as={Link} name="signup" to="/signup">
+              <Icon name="signup" />
+            </Button.Content>
+          </Button>
+        </Button.Group>
+
         // <Link to="/login" className="ui primary">
         //   Login
         // </Link>

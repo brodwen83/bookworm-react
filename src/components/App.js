@@ -8,12 +8,14 @@ import "../styles.css";
 import DashboardPage from "./pages/DashboardPage";
 import UserRoute from "./routes/UserRoute";
 import GuestRoute from "./routes/GuestRoute";
+import SignUp from "./auth/SignUp";
 
 const App = ({ location }) => {
   return (
     <div className="ui container">
       <Route location={location} path="/" exact component={Homepage} />
       <GuestRoute location={location} path="/login" exact component={LogIn} />
+      <GuestRoute location={location} path="/signup" exact component={SignUp} />
       <UserRoute
         location={location}
         path="/dashboard"

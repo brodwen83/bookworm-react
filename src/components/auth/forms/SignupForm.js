@@ -4,7 +4,7 @@ import { Form, Button, Label, Message } from "semantic-ui-react";
 
 import Validator from "validator";
 
-class LoginForm extends Component {
+class SignupForm extends Component {
   state = {
     data: {
       email: "",
@@ -59,15 +59,6 @@ class LoginForm extends Component {
     const { data, errors, loading } = this.state;
     return (
       <div>
-        {/* <pre>
-          email: {data.email}
-          <br />
-          password: {data.password}
-          <br />
-          error.email: {errors.email}
-          <br />
-          error.password: {errors.password}
-        </pre> */}
         <Form onSubmit={this.onSubmit} loading={loading}>
           {errors.global && (
             <Message negative>
@@ -110,15 +101,15 @@ class LoginForm extends Component {
               // <InlineError text={errors.password} />
             )}
           </Form.Field>
-          <Button primary>Login</Button>
+          <Button primary>Signup</Button>
         </Form>
       </div>
     );
   }
 }
 
-LoginForm.propTypes = {
+SignupForm.propTypes = {
   submit: PropTypes.func.isRequired
 };
 
-export default LoginForm;
+export default SignupForm;
