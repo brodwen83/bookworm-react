@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import LoginForm from "./forms/LoginForm";
 import { connect } from "react-redux";
 import { login } from "../store/actions/auth";
+import MyCustomHeader from "../messages/MyCustomHeader";
 
 class LogIn extends Component {
   submit = data =>
@@ -11,7 +12,8 @@ class LogIn extends Component {
   render() {
     return (
       <div>
-        <h2>Login</h2>
+        {/* <h2>Login</h2> */}
+        <MyCustomHeader icon="sign-in" header="Login" subheader="Login user" />
         <LoginForm submit={this.submit} />
       </div>
     );

@@ -16,24 +16,19 @@ const HomePage = ({ isAuthenticated, logout }) => {
       ) : (
         <Button.Group>
           <Button animated>
-            <Button.Content visible primary as={Link} name="login" to="/login">
+            <Button.Content visible as={Link} name="login" to="/login">
               Login
             </Button.Content>
-            <Button.Content hidden primary as={Link} name="login" to="/login">
+            <Button.Content hidden as={Link} name="login" to="/login">
               <Icon name="sign-in" />
             </Button.Content>
           </Button>
+          <Button.Or />
           <Button animated>
-            <Button.Content
-              visible
-              primary
-              as={Link}
-              name="signup"
-              to="/signup"
-            >
+            <Button.Content visible as={Link} name="signup" to="/signup">
               Signup
             </Button.Content>
-            <Button.Content hidden primary as={Link} name="signup" to="/signup">
+            <Button.Content hidden as={Link} name="signup" to="/signup">
               <Icon name="signup" />
             </Button.Content>
           </Button>

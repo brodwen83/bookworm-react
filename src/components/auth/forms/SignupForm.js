@@ -20,7 +20,8 @@ class SignupForm extends Component {
     });
   };
 
-  onSubmit = () => {
+  onSubmit = e => {
+    e.preventDefault();
     console.log("submitted");
     const errors = this.validate(this.state.data);
     this.setState({ errors });

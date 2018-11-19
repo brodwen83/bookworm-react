@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import SignupForm from "./forms/SignupForm";
 import { connect } from "react-redux";
 import { signup } from "../store/actions/users";
+import MyCustomHeader from "../messages/MyCustomHeader";
 
 class SignUp extends Component {
   submit = data =>
@@ -11,7 +12,8 @@ class SignUp extends Component {
   render() {
     return (
       <div>
-        <h2>Signup</h2>
+        {/* <h2>Signup</h2> */}
+        <MyCustomHeader icon="signup" header="Signup" subheader="Sign up" />
         <SignupForm submit={this.submit} />
       </div>
     );
